@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fanny Lattard — Portfolio Data</title>
+<meta name="description" content="Portfolio de Fanny Lattard, étudiante en Master Big Data, Analyse & Business Intelligence — à la recherche d'un stage Data Scientist / Data Analyst.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   PALETTE
+   ========================================================= */
+:root{
+  --bordeaux:#790D16;
+  --bordeaux-dark:#560910;
+  --sable:#E5D3AF;
+  --creme:#F5EFE1;
+  --ciel:#AEC4D4;
+  --ciel-dark:#5E7E95;
+  --ink:#2B1013;
+  --ink-soft:#5C4346;
+  --white:#FFFDF8;
+  --radius:18px;
+  --shadow:0 10px 30px -12px rgba(121,13,22,.25);
+  --maxw:1120px;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,Segoe UI,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);background:var(--creme);color:var(--ink);line-height:1.65;font-size:16.5px;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.container{width:min(var(--maxw),92%);margin-inline:auto}
+::selection{background:var(--bordeaux);color:var(--creme)}
+
+/* ---------- Banner ---------- */
+.banner{background:var(--bordeaux);color:var(--creme);font-size:.88rem;text-align:center;padding:.55rem 1rem;font-weight:500}
+.banner strong{color:var(--sable)}
+
+/* ---------- Nav ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(245,239,225,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(121,13,22,.1)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.35rem;color:var(--bordeaux);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.logo svg{width:28px;height:28px}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.93rem;color:var(--ink-soft);position:relative;padding:.25rem 0;transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--bordeaux);transition:width .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--bordeaux)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.lang{display:flex;border:1.5px solid var(--bordeaux);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;padding:.3rem .7rem;font:700 .78rem var(--sans);color:var(--bordeaux);cursor:pointer;letter-spacing:.04em}
+.lang button.on{background:var(--bordeaux);color:var(--creme)}
+.burger{display:none;background:none;border:0;cursor:pointer;width:40px;height:40px;position:relative}
+.burger span,.burger span::before,.burger span::after{position:absolute;left:9px;width:22px;height:2px;background:var(--bordeaux);border-radius:2px;transition:.3s;content:""}
+.burger span{top:19px}
+.burger span::before{top:-7px;left:0}
+.burger span::after{top:7px;left:0}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+
+/* ---------- Sections ---------- */
+section{padding:6rem 0}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bordeaux);margin-bottom:.8rem}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--bordeaux)}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4.5vw,3rem);line-height:1.1;margin-bottom:1rem;color:var(--ink)}
+h2 em{color:var(--bordeaux);font-style:italic}
+.lead{color:var(--ink-soft);max-width:640px;font-size:1.05rem;margin-bottom:3rem}
+.alt{background:var(--white)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Hero ---------- */
+.hero{padding:5rem 0 6rem;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center}
+.hello{font-family:var(--serif);font-style:italic;color:var(--bordeaux);font-size:1.3rem;margin-bottom:.4rem}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.8rem,7.5vw,5.2rem);line-height:1;letter-spacing:-.02em;margin-bottom:1rem}
+.hero h1 span{color:var(--bordeaux)}
+.tagline{font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:1rem}
+.tagline mark{background:linear-gradient(transparent 60%,var(--ciel) 60%);color:inherit;padding:0 .15em}
+.hero p.intro{color:var(--ink-soft);max-width:560px;margin-bottom:2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn svg{width:18px;height:18px}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.5rem;border-radius:999px;font-weight:700;font-size:.95rem;text-decoration:none;border:2px solid var(--bordeaux);cursor:pointer;font-family:var(--sans);transition:transform .2s,background .2s,color .2s,box-shadow .2s}
+.btn-primary{background:var(--bordeaux);color:var(--creme)}
+.btn-primary:hover{background:var(--bordeaux-dark);transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-ghost{background:transparent;color:var(--bordeaux)}
+.btn-ghost:hover{background:var(--bordeaux);color:var(--creme)}
+.arrows{display:inline-flex;flex-direction:column;line-height:.5;font-size:.7rem}
+.arrows i{font-style:normal;animation:drop 1.6s infinite}
+.arrows i:nth-child(2){animation-delay:.2s}.arrows i:nth-child(3){animation-delay:.4s}
+@keyframes drop{0%,100%{opacity:.25}50%{opacity:1}}
+.hero-visual{position:relative;aspect-ratio:1;max-width:440px;justify-self:center;width:100%}
+.hero-visual svg{width:100%;height:100%}
+.hex-float{animation:float 6s ease-in-out infinite;transform-origin:center}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:4rem}
+.stat{background:var(--white);border:1px solid rgba(121,13,22,.1);border-radius:var(--radius);padding:1.2rem 1.3rem}
+.stat b{display:block;font-family:var(--serif);font-size:1.9rem;color:var(--bordeaux);line-height:1.1}
+.stat span{font-size:.85rem;color:var(--ink-soft)}
+
+/* ---------- Parcours / à propos ---------- */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:start}
+.about-text p{margin-bottom:1rem;color:var(--ink-soft)}
+.about-text p strong{color:var(--ink)}
+.skill-group{margin-bottom:1.5rem}
+.skill-group h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);margin-bottom:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{background:var(--creme);border:1.5px solid var(--sable);color:var(--ink);padding:.35rem .85rem;border-radius:999px;font-size:.88rem;font-weight:600}
+.chip.blue{background:rgba(174,196,212,.35);border-color:var(--ciel)}
+.chip.red{background:var(--bordeaux);border-color:var(--bordeaux);color:var(--creme)}
+.langs{display:grid;gap:.8rem}
+.lang-row{display:grid;grid-template-columns:110px 1fr auto;gap:.8rem;align-items:center;font-size:.92rem}
+.bar{height:8px;background:var(--sable);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--bordeaux);border-radius:99px;width:0;transition:width 1.2s ease}
+.lang-row small{color:var(--ink-soft);font-size:.8rem;white-space:nowrap}
+.hidden-life{margin-top:2rem;border:1.5px dashed var(--bordeaux);border-radius:var(--radius);overflow:hidden}
+.hidden-life summary{list-style:none;cursor:pointer;padding:1rem 1.3rem;font-weight:700;color:var(--bordeaux);display:flex;justify-content:space-between;align-items:center}
+.hidden-life summary::-webkit-details-marker{display:none}
+.hidden-life summary::after{content:"+";font-size:1.4rem;transition:transform .3s}
+.hidden-life[open] summary::after{transform:rotate(45deg)}
+.hobbies{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:0 1.3rem 1.3rem}
+.hobby{background:var(--creme);border-radius:14px;padding:1rem;text-align:center}
+.hobby .emo{font-size:1.8rem}
+.hobby b{display:block;margin:.3rem 0 .2rem}
+.hobby p{font-size:.82rem;color:var(--ink-soft);line-height:1.45}
+
+/* ---------- Projets ---------- */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.project{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(121,13,22,.1);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.project:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.project-visual{height:150px;display:flex;align-items:center;justify-content:center;font-size:3.2rem;position:relative;overflow:hidden}
+.project-visual::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-opacity='.25' d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/svg%3E")}
+.project-visual span{position:relative;filter:drop-shadow(0 6px 10px rgba(0,0,0,.15))}
+.v-bordeaux{background:linear-gradient(135deg,var(--bordeaux),#A3343C)}
+.v-ciel{background:linear-gradient(135deg,var(--ciel-dark),var(--ciel))}
+.v-sable{background:linear-gradient(135deg,#C9AE78,var(--sable))}
+.project-body{padding:1.4rem 1.5rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.project-tag{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ciel-dark);margin-bottom:.4rem}
+.project h3{font-family:var(--serif);font-size:1.35rem;line-height:1.25;margin-bottom:.6rem}
+.project p{color:var(--ink-soft);font-size:.93rem;margin-bottom:1rem}
+.project ul{margin:0 0 1rem 1.1rem;color:var(--ink-soft);font-size:.9rem}
+.project ul li{margin-bottom:.25rem}
+.project .chips{margin-bottom:1.2rem}
+.project .chip{font-size:.78rem;padding:.25rem .65rem}
+.project-links{margin-top:auto;display:flex;gap:.6rem;flex-wrap:wrap}
+.project-links a{font-size:.85rem;padding:.55rem 1rem}
+.gh-note{margin-top:2rem;font-size:.88rem;color:var(--ink-soft);text-align:center}
+.gh-note a{color:var(--bordeaux);font-weight:700}
+
+/* ---------- Timeline ---------- */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--bordeaux),var(--ciel))}
+.t-item{position:relative;margin-bottom:2rem;background:var(--white);border-radius:var(--radius);padding:1.5rem 1.6rem;border:1px solid rgba(121,13,22,.1);transition:box-shadow .3s}
+.alt .t-item{background:var(--creme)}
+.t-item:hover{box-shadow:var(--shadow)}
+.t-item::before{content:"";position:absolute;left:-2rem;top:1.8rem;width:16px;height:16px;border-radius:50%;background:var(--creme);border:3px solid var(--bordeaux);transform:translateX(0)}
+.t-head{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.4rem}
+.t-date{font-weight:700;font-size:.82rem;color:var(--bordeaux);background:rgba(121,13,22,.08);padding:.2rem .7rem;border-radius:999px;white-space:nowrap;align-self:flex-start}
+.t-item h3{font-family:var(--serif);font-size:1.3rem;line-height:1.3}
+.t-place{font-weight:600;color:var(--ink-soft);font-size:.93rem;margin-bottom:.7rem}
+.t-place .loc{color:var(--ciel-dark)}
+.t-item ul{margin-left:1.1rem;color:var(--ink-soft);font-size:.93rem}
+.t-item ul li{margin-bottom:.35rem}
+.t-item .chips{margin-top:.8rem}
+.badge{display:inline-block;background:var(--sable);color:var(--ink);font-size:.78rem;font-weight:700;padding:.2rem .65rem;border-radius:999px;margin-left:.3rem;vertical-align:middle}
+.badge.blue{background:var(--ciel)}
+
+/* ---------- Certifications ---------- */
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem}
+.cert{background:var(--white);border-radius:var(--radius);padding:1.5rem;border:1px solid rgba(121,13,22,.1);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.cert:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.cert::after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;background:var(--sable);clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0 50%);opacity:.55}
+.cert .ico{width:46px;height:46px;border-radius:12px;background:var(--bordeaux);color:var(--creme);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem}
+.cert:nth-child(even) .ico{background:var(--ciel-dark)}
+.cert h3{font-family:var(--serif);font-size:1.12rem;line-height:1.3;margin-bottom:.3rem}
+.cert p{font-size:.86rem;color:var(--ink-soft)}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--bordeaux);color:var(--creme);position:relative;overflow:hidden}
+.contact h2{color:var(--creme)}
+.contact h2 em{color:var(--sable)}
+.contact .eyebrow{color:var(--sable)}
+.contact .eyebrow::before{background:var(--sable)}
+.contact .lead{color:rgba(245,239,225,.8)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;position:relative}
+.c-cards{display:grid;gap:1rem}
+.c-card{display:flex;align-items:center;gap:1rem;background:rgba(245,239,225,.08);border:1px solid rgba(245,239,225,.2);border-radius:var(--radius);padding:1rem 1.2rem;text-decoration:none;transition:background .2s,transform .2s}
+.c-card:hover{background:rgba(245,239,225,.16);transform:translateX(4px)}
+.c-card .ico{width:44px;height:44px;flex:none;border-radius:12px;background:var(--sable);color:var(--bordeaux);display:flex;align-items:center;justify-content:center}
+.c-card .ico svg{width:22px;height:22px}
+.c-card small{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--sable);font-weight:700}
+.c-card span{font-weight:600;word-break:break-all}
+.copy{margin-left:auto;background:none;border:1px solid rgba(245,239,225,.4);color:var(--creme);border-radius:8px;padding:.3rem .6rem;font:600 .75rem var(--sans);cursor:pointer;flex:none}
+.copy:hover{background:var(--creme);color:var(--bordeaux)}
+form{background:var(--creme);color:var(--ink);border-radius:calc(var(--radius) + 4px);padding:2rem;display:grid;gap:1rem}
+form h3{font-family:var(--serif);font-size:1.4rem;color:var(--bordeaux)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{font-size:.82rem;font-weight:700;color:var(--ink-soft);display:grid;gap:.35rem}
+input,textarea{font:inherit;font-size:.95rem;padding:.75rem .9rem;border-radius:12px;border:1.5px solid var(--sable);background:var(--white);color:var(--ink);transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--bordeaux)}
+textarea{min-height:130px;resize:vertical}
+.form-msg{font-size:.86rem;color:var(--ciel-dark);font-weight:600;min-height:1.2em}
+
+footer{background:var(--bordeaux-dark);color:rgba(245,239,225,.7);text-align:center;padding:1.5rem 0;font-size:.85rem}
+
+/* ---------- Responsive ---------- */
+@media (max-width:960px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-visual{max-width:300px;order:-1}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  header{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--creme)}
+  .burger{display:block}
+  .nav-links{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:min(300px,80vw);background:var(--creme);flex-direction:column;align-items:flex-start;padding:6rem 2rem 2rem;gap:1.4rem;box-shadow:-10px 0 40px rgba(0,0,0,.15);clip-path:inset(0 0 0 100%);visibility:hidden;transition:clip-path .35s ease,visibility 0s .35s;z-index:-1}
+  .nav-links.open{clip-path:inset(0 0 0 -60px);visibility:visible;transition:clip-path .35s ease}
+  .nav-links a{font-size:1.1rem}
+}
+@media (max-width:560px){
+  body{font-size:15.5px}
+  section{padding:4.2rem 0}
+  .hero{padding:2.5rem 0 4rem}
+  .hobbies{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr}
+  .timeline{padding-left:1.5rem}
+  .t-item{padding:1.2rem}
+  .t-item::before{left:-1.5rem;width:14px;height:14px}
+  .timeline::before{left:5px}
+  .lang-row{grid-template-columns:90px 1fr}
+  .lang-row small{grid-column:1/-1;margin-top:-.5rem}
+  form{padding:1.4rem}
+  .banner{font-size:.8rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="banner" data-i18n-html="banner"></div>
+
+<header>
+  <nav class="nav container" aria-label="Navigation principale">
+    <a href="#presentation" class="logo" aria-label="Accueil">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l12 7v14l-12 7-12-7V9z" fill="#790D16"/><text x="16" y="21" text-anchor="middle" font-family="Fraunces,serif" font-size="13" font-weight="700" fill="#F5EFE1">FL</text></svg>
+      Fanny Lattard
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#presentation" data-i18n="nav_home"></a></li>
+      <li><a href="#parcours" data-i18n="nav_about"></a></li>
+      <li><a href="#projets" data-i18n="nav_projects"></a></li>
+      <li><a href="#formation" data-i18n="nav_edu"></a></li>
+      <li><a href="#certifications" data-i18n="nav_certs"></a></li>
+      <li><a href="#experiences" data-i18n="nav_exp"></a></li>
+      <li><a href="#contact" data-i18n="nav_contact"></a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr" class="on">FR</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+<!-- ================= PRÉSENTATION ================= -->
+<section id="presentation" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="reveal">
+        <p class="hello" data-i18n="hello"></p>
+        <h1>Fanny <span>Lattard</span></h1>
+        <p class="tagline" data-i18n-html="tagline"></p>
+        <p class="intro" data-i18n="intro"></p>
+        <div class="btns">
+          <a href="#parcours" class="btn btn-primary"><span data-i18n="cta_discover"></span> <span class="arrows" aria-hidden="true"><i>↓</i><i>↓</i><i>↓</i></span></a>
+          <a href="#" class="btn btn-ghost" data-link="cv" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-i18n="cta_cv"></span></a>
+          <a href="#contact" class="btn btn-ghost" data-i18n="cta_contact"></a>
+        </div>
+      </div>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <!-- Nid d'abeille + données : clin d'œil à l'apiculture et à la data -->
+        <svg viewBox="0 0 400 400">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#790D16"/><stop offset="1" stop-color="#A3343C"/></linearGradient>
+          </defs>
+          <g class="hex-float">
+            <polygon points="200,40 290,92 290,196 200,248 110,196 110,92" fill="url(#g1)"/>
+            <g transform="translate(200 144)" fill="none" stroke="#F5EFE1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="-55,40 -25,10 0,25 30,-15 55,-30"/>
+              <circle cx="-55" cy="40" r="4" fill="#F5EFE1"/><circle cx="-25" cy="10" r="4" fill="#F5EFE1"/><circle cx="0" cy="25" r="4" fill="#F5EFE1"/><circle cx="30" cy="-15" r="4" fill="#F5EFE1"/><circle cx="55" cy="-30" r="5" fill="#E5D3AF" stroke="#E5D3AF"/>
+            </g>
+          </g>
+          <g class="hex-float" style="animation-delay:-2s">
+            <polygon points="300,200 360,235 360,305 300,340 240,305 240,235" fill="#AEC4D4"/>
+            <g transform="translate(300 270)" fill="#5E7E95"><rect x="-28" y="5" width="12" height="22" rx="2"/><rect x="-6" y="-12" width="12" height="39" rx="2"/><rect x="16" y="-25" width="12" height="52" rx="2"/></g>
+          </g>
+          <g class="hex-float" style="animation-delay:-4s">
+            <polygon points="110,220 165,252 165,316 110,348 55,316 55,252" fill="#E5D3AF"/>
+            <text x="110" y="296" text-anchor="middle" font-family="Fraunces,serif" font-size="30" font-weight="700" fill="#790D16">SQL</text>
+          </g>
+          <polygon points="330,60 352,73 352,99 330,112 308,99 308,73" fill="none" stroke="#790D16" stroke-width="2.5" opacity=".5"/>
+          <polygon points="60,110 76,119 76,138 60,147 44,138 44,119" fill="#AEC4D4" opacity=".7"/>
+          <polygon points="225,355 239,363 239,379 225,387 211,379 211,363" fill="#790D16" opacity=".35"/>
+        </svg>
+      </div>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><b>Bac+5</b><span data-i18n="stat1"></span></div>
+      <div class="stat"><b>16,43</b><span data-i18n="stat2"></span></div>
+      <div class="stat"><b>3</b><span data-i18n="stat3"></span></div>
+      <div class="stat"><b>+∞</b><span data-i18n="stat4"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DÉCOUVRIR MON PARCOURS ================= -->
+<section id="parcours" class="alt">
+  <div class="container">
+    <p class="eyebrow reveal" data-i18n="about_eyebrow"></p>
+    <h2 class="reveal" data-i18n-html="about_title"></h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p data-i18n-html="about_p1"></p>
+        <p data-i18n-html="about_p2"></p>
+        <p data-i18n-html="about_p3"></p>
+
+        <details class="hidden-life">
+          <summary data-i18n="hidden_title"></summary>
+          <div class="hobbies">
+            <div class="hobby"><div class="emo">🐝</div><b data-i18n="h1_t"></b><p data-i18n="h1_d"></p></div>
+            <div class="hobby"><div class="emo">📚</div><b data-i18n="h2_t"></b><p data-i18n="h2_d"></p></div>
+            <div class="hobby"><div class="emo">🏃‍♀️</div><b data-i18n="h3_t"></b><p data-i18n="h3_d"></p></div>
+          </div>
+        </details>
+      </div>
+      <div class="reveal">
+        <div class="skill-group">
+          <h3 data-i18n="sk_data"></h3>
+          <div class="chips"><span class="chip red">SQL</span><span class="chip red">Python</span><span class="chip red">PySpark</span><span class="chip red">R</span></div>
+        </div>
+        <div class="skill-group">
+          <h3 data-i18n="sk_bi"></h3>
+          <div class="chips"><span class="chip">Power BI</span><span class="chip">Excel</span><span class="chip">Dataiku</span></div>
+        </div>
+        <div class="skill-group">
+          <h3 data-i18n="sk_methods"></h3>
+          <div class="chips"><span class="chip blue" data-i18n="m1"></span><span class="chip blue">Machine Learning</span><span class="chip blue" data-i18n="m3"></span><span class="chip blue">Data visualisation</span></div>
+        </div>
+        <div class="skill-group">
+          <h3 data-i18n="sk_tools"></h3>
+          <div class="chips"><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Claude</span><span class="chip">PowerPoint</span><span class="chip">Canva</span><span class="chip">Teams</span><span class="chip">Zoom</span></div>
+        </div>
+        <div class="skill-group">
+          <h3 data-i18n="sk_langs"></h3>
+          <div class="langs">
+            <div class="lang-row"><span data-i18n="l_fr"></span><div class="bar"><i data-w="100"></i></div><small data-i18n="l_fr_lvl"></small></div>
+            <div class="lang-row"><span data-i18n="l_en"></span><div class="bar"><i data-w="80"></i></div><small>TOEFL B2/C1 (2024)</small></div>
+            <div class="lang-row"><span data-i18n="l_de"></span><div class="bar"><i data-w="35"></i></div><small>German Certificate A2 (2019)</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJETS GITHUB ================= -->
+<section id="projets">
+  <div class="container">
+    <p class="eyebrow reveal" data-i18n="proj_eyebrow"></p>
+    <h2 class="reveal" data-i18n-html="proj_title"></h2>
+    <p class="lead reveal" data-i18n="proj_lead"></p>
+    <div class="projects" id="projectsGrid"></div>
+    <p class="gh-note reveal" data-i18n-html="proj_more"></p>
+  </div>
+</section>
+
+<!-- ================= PARCOURS SCOLAIRE ================= -->
+<section id="formation" class="alt">
+  <div class="container">
+    <p class="eyebrow reveal" data-i18n="edu_eyebrow"></p>
+    <h2 class="reveal" data-i18n-html="edu_title"></h2>
+    <div class="timeline">
+      <article class="t-item reveal">
+        <div class="t-head"><h3 data-i18n="e1_t"></h3><span class="t-date">2025 – 2027</span></div>
+        <p class="t-place">Université Sorbonne Paris Nord · <span class="loc">Paris</span> <span class="badge" data-i18n="in_progress"></span></p>
+        <ul>
+          <li data-i18n-html="e1_l1"></li>
+          <li data-i18n-html="e1_l2"></li>
+        </ul>
+        <div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip" data-i18n="m1"></span><span class="chip">Data Science Systems</span><span class="chip">Artificial Intelligence</span><span class="chip">Machine Learning</span><span class="chip" data-i18n="maths"></span></div>
+      </article>
+      <article class="t-item reveal">
+        <div class="t-head"><h3 data-i18n="e2_t"></h3><span class="t-date">2024 – 2025</span></div>
+        <p class="t-place">Panepistimio Pireos (University of Piraeus) · <span class="loc" data-i18n="athens"></span> <span class="badge blue">16,43 / 20</span></p>
+        <ul><li data-i18n="e2_l1"></li></ul>
+      </article>
+      <article class="t-item reveal">
+        <div class="t-head"><h3 data-i18n="e3_t"></h3><span class="t-date">2022 – 2025</span></div>
+        <p class="t-place">Université Grenoble Alpes · <span class="loc">Valence</span> <span class="badge" data-i18n="mention"></span></p>
+        <ul><li data-i18n="e3_l1"></li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATIONS ================= -->
+<section id="certifications">
+  <div class="container">
+    <p class="eyebrow reveal" data-i18n="cert_eyebrow"></p>
+    <h2 class="reveal" data-i18n-html="cert_title"></h2>
+    <p class="lead reveal" data-i18n="cert_lead"></p>
+    <div class="certs">
+      <div class="cert reveal"><div class="ico">◆</div><h3>Inside LVMH Certificate</h3><p data-i18n="c1"></p></div>
+      <div class="cert reveal"><div class="ico">⚖</div><h3 data-i18n="c2_t"></h3><p>GIACC</p></div>
+      <div class="cert reveal"><div class="ico">★</div><h3>KickOff Management Institute</h3><p data-i18n="c3"></p></div>
+      <div class="cert reveal"><div class="ico">⌗</div><h3>Beginner &amp; Intermediate SQL</h3><p>DataCamp</p></div>
+      <div class="cert reveal"><div class="ico">◈</div><h3>Dataiku Core Designer</h3><p data-i18n="c7"></p></div>
+      <div class="cert reveal"><div class="ico">EN</div><h3>TOEFL — B2/C1</h3><p data-i18n="c5"></p></div>
+      <div class="cert reveal"><div class="ico">DE</div><h3>German Certificate — A2</h3><p data-i18n="c6"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPÉRIENCES PRO ================= -->
+<section id="experiences" class="alt">
+  <div class="container">
+    <p class="eyebrow reveal" data-i18n="exp_eyebrow"></p>
+    <h2 class="reveal" data-i18n-html="exp_title"></h2>
+    <div class="timeline">
+      <article class="t-item reveal">
+        <div class="t-head"><h3 data-i18n="x0_t"></h3><span class="t-date" data-i18n="x0_d"></span></div>
+        <p class="t-place"><span data-i18n="x0_p"></span> · <span class="loc" data-i18n="x0_loc"></span> <span class="badge blue" data-i18n="search"></span></p>
+        <ul><li data-i18n="x0_l1"></li></ul>
+      </article>
+      <article class="t-item reveal">
+        <div class="t-head"><h3 data-i18n="x1_t"></h3><span class="t-date" data-i18n="x1_d"></span></div>
+        <p class="t-place">DPD Livraison · <span class="loc">Valence</span></p>
+        <ul>
+          <li data-i18n="x1_l1"></li>
+          <li data-i18n="x1_l2"></li>
+          <li data-i18n="x1_l3"></li>
+        </ul>
+      </article>
+      <article class="t-item reveal">
+        <div class="t-head"><h3 data-i18n="x2_t"></h3><span class="t-date" data-i18n="x2_d"></span></div>
+        <p class="t-place">Université Grenoble Alpes · <span class="loc">Valence</span></p>
+        <ul><li data-i18n="x2_l1"></li></ul>
+      </article>
+      <article class="t-item reveal">
+        <div class="t-head"><h3 data-i18n="x3_t"></h3><span class="t-date">2020 – 2026</span></div>
+        <p class="t-place"><span data-i18n="x3_p"></span> · <span class="loc">Montrigaud, Chambéry</span></p>
+        <ul>
+          <li data-i18n="x3_l1"></li>
+          <li data-i18n="x3_l2"></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+  <div class="container">
+    <p class="eyebrow reveal" data-i18n="ct_eyebrow"></p>
+    <h2 class="reveal" data-i18n-html="ct_title"></h2>
+    <p class="lead reveal" data-i18n="ct_lead"></p>
+    <div class="contact-grid">
+      <div class="c-cards reveal">
+        <a class="c-card" href="mailto:lattardfanny@gmail.com">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
+          <div><small>Email</small><span>lattardfanny@gmail.com</span></div>
+          <button type="button" class="copy" data-copy="lattardfanny@gmail.com" data-i18n="copy"></button>
+        </a>
+        <a class="c-card" href="tel:+33782110966">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg></div>
+          <div><small data-i18n="phone"></small><span>+33 7 82 11 09 66</span></div>
+        </a>
+        <a class="c-card" href="https://github.com/Fannyltd" target="_blank" rel="noopener">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 00-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 015.8 0C17.3 4.8 18.3 5.1 18.3 5.1c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0012 .5z"/></svg></div>
+          <div><small>GitHub</small><span>github.com/Fannyltd</span></div>
+        </a>
+        <a class="c-card" href="#" data-link="linkedin" target="_blank" rel="noopener">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></div>
+          <div><small>LinkedIn</small><span>Fanny Lattard</span></div>
+        </a>
+        <a class="c-card" href="#" data-link="cv" download>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg></div>
+          <div><small>CV</small><span data-i18n="cta_cv"></span></div>
+        </a>
+        <div class="c-card" style="cursor:default">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-6 8-12a8 8 0 10-16 0c0 6 8 12 8 12z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><small data-i18n="location"></small><span data-i18n="location_v"></span></div>
+        </div>
+      </div>
+      <form id="contactForm" class="reveal" novalidate>
+        <h3 data-i18n="f_title"></h3>
+        <div class="row2">
+          <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name"></label>
+          <label><span data-i18n="f_email"></span><input name="email" type="email" required autocomplete="email"></label>
+        </div>
+        <label><span data-i18n="f_subject"></span><input name="subject"></label>
+        <label><span data-i18n="f_msg"></span><textarea name="message" required></textarea></label>
+        <button type="submit" class="btn btn-primary" style="justify-self:start" data-i18n="f_send"></button>
+        <p class="form-msg" id="formMsg" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container" data-i18n-html="footer"></div></footer>
+
+<!-- =====================================================================
+     ✏️  MES PROJETS — MODIFIE CETTE PARTIE POUR CHOISIR TES PROJETS
+     ---------------------------------------------------------------------
+     • Pour AJOUTER un projet : copie un bloc { ... } et modifie-le.
+     • Pour MASQUER un projet sans le supprimer : mets  visible: false
+     • Pour changer l'ORDRE : déplace les blocs.
+     • repo  : lien vers le dépôt GitHub (ex. https://github.com/Fannyltd/nom-du-repo)
+     • demo  : lien optionnel (vidéo, site, rapport…) — laisse "" si aucun
+     • color : "bordeaux", "ciel" ou "sable"   •   icon : un emoji
+     ===================================================================== -->
+<script>
+const PROJECTS = [
+  {
+    visible: true,
+    icon: "🥫",
+    color: "bordeaux",
+    tag:   { fr: "Économétrie · Modélisation", en: "Econometrics · Modelling" },
+    title: { fr: "Modélisation Yuka — rétro-ingénierie d'algorithme", en: "Yuka modelling — algorithm reverse-engineering" },
+    desc:  {
+      fr: "Création d'un modèle économétrique Logit ordonné sous R pour prédire les notes nutritionnelles attribuées par l'application Yuka.",
+      en: "Building an ordered Logit econometric model in R to predict the nutritional scores given by the Yuka app."
+    },
+    points: {
+      fr: ["Statistiques descriptives et exploration des données", "Validation des hypothèses du modèle", "Évaluation de la performance prédictive", "Interprétation métier des résultats"],
+      en: ["Descriptive statistics and data exploration", "Validation of model assumptions", "Predictive performance evaluation", "Business interpretation of results"]
+    },
+    stack: ["R", "Logit ordonné", "Statistiques"],
+    repo: "https://github.com/Fannyltd/Projet-YUKA",   // ← remplace par le lien exact du dépôt
+    demo: ""
+  },
+  {
+    visible: true,
+    icon: "🏛️",
+    color: "ciel",
+    tag:   { fr: "Projet de groupe · Gestion de projet", en: "Group project · Project management" },
+    title: { fr: "SpaceBook — réservation de salles universitaires", en: "SpaceBook — university room booking" },
+    desc:  {
+      fr: "Conception en équipe d'une plateforme de gestion et de réservation des salles universitaires, du cahier des charges aux livrables.",
+      en: "Team design of a platform to manage and book university rooms, from the specifications to the deliverables."
+    },
+    points: {
+      fr: ["Cahier des charges et cahier des livrables", "Architecture, front-end, back-end et moteur métier", "Maintenance et signalement d'incidents", "Data visualisation"],
+      en: ["Specifications and deliverables documents", "Architecture, front-end, back-end and business engine", "Maintenance and incident reporting", "Data visualisation"]
+    },
+    stack: ["Gestion de projet", "Architecture", "Data viz"],
+    repo: "https://github.com/Fannyltd/SpaceBook",   // ← remplace par le lien exact du dépôt
+    demo: ""
+  }
+  // , { visible: true, icon: "📊", color: "sable", tag: {fr:"", en:""}, title: {fr:"", en:""}, desc: {fr:"", en:""}, points: {fr:[], en:[]}, stack: [], repo: "", demo: "" }
+];
+
+/* ✏️ MES LIENS
+   - cv       : chemin vers ton CV en PDF (mets le fichier dans un dossier "assets" à côté de index.html)
+   - linkedin : l'adresse de ton profil LinkedIn (copie-la depuis ton navigateur)                       */
+const LINKS = {
+  cv: "assets/CV_LATTARD_Fanny.pdf",
+  linkedin: "https://www.linkedin.com/search/results/people/?keywords=Fanny%20Lattard"   // ← remplace par l'URL de ton profil
+};
+
+/* Chargement automatique de tes dépôts GitHub publics (fonctionne une fois le site en ligne, ex. GitHub Pages).
+   - autoLoad : true pour afficher automatiquement tes autres dépôts, false pour n'afficher que la liste ci-dessus
+   - only     : si tu mets des noms de dépôts ici, seuls ceux-là seront affichés  (ex. ["projet-yuka", "spacebook"])
+   - hide     : noms de dépôts à ne jamais afficher                               (ex. ["Fannyltd", "test"])          */
+const GITHUB = {
+  user: "Faltdha",
+  autoLoad: true,
+  only: [],
+  hide: []
+};
+</script>
+
+<!-- ===================== TEXTES FR / EN ===================== -->
+<script>
+const I18N = {
+fr:{
+  banner:"🔎 À la recherche d'un <strong>stage de 6 mois en Data Science / Data Analysis</strong> dès début mars — Paris &amp; banlieue",
+  nav_home:"Présentation", nav_about:"Mon parcours", nav_projects:"Projets", nav_edu:"Formation", nav_certs:"Certifications", nav_exp:"Expériences", nav_contact:"Contact",
+  hello:"Bonjour, je suis",
+  tagline:"Étudiante en Master <mark>Big Data, Analyse &amp; Business Intelligence</mark>",
+  intro:"Entre économie, économétrie et programmation, j'aime faire parler les données pour éclairer des décisions concrètes. Je recherche un stage de Data Scientist ou Data Analyst de 6 mois à partir de début mars, à Paris et en région parisienne.",
+  cta_discover:"Découvrir mon parcours", cta_contact:"Me contacter", cta_cv:"Télécharger mon CV",
+  stat1:"Master en cours à Sorbonne Paris Nord", stat2:"de moyenne lors de mon Erasmus", stat3:"langues : français, anglais, allemand", stat4:"de motivation pour ce stage",
+  about_eyebrow:"Découvrir mon parcours", about_title:"De l'économie <em>à la data</em>",
+  about_p1:"Après une <strong>Licence d'Économie et Gestion</strong> à l'Université Grenoble Alpes (mention bien), j'ai poursuivi en <strong>Master Économie de l'entreprise et des marchés</strong> à l'Université Sorbonne Paris Nord, parcours <strong>Big Data, Analyse &amp; Business Intelligence</strong>.",
+  about_p2:"Mon année d'études à <strong>Athènes</strong>, entièrement en anglais, m'a permis d'approfondir l'économie, la gestion et le Big Data dans un environnement international — et d'y obtenir 16,43/20 de moyenne.",
+  about_p3:"Aujourd'hui, je combine <strong>économétrie, SQL, Python et Machine Learning</strong> pour transformer des données brutes en analyses utiles. La rigueur et la patience apprises me suivent dans chaque projet.",
+  hidden_title:"✨ Voir ma vie cachée",
+  h1_t:"Apiculture", h1_d:"Copropriétaire de 20 ruches, de la récolte à la mise en pots.",
+  h2_t:"Lecture", h2_d:"Une passion qui nourrit ma curiosité au quotidien.",
+  h3_t:"Course à pied", h3_d:"Pour l'endurance, la régularité… et l'esprit clair.",
+  sk_data:"Langages & data", sk_bi:"Business Intelligence", sk_methods:"Méthodes", sk_tools:"Outils & collaboration", sk_langs:"Langues",
+  m1:"Économétrie", m3:"Statistiques", maths:"Mathématiques",
+  l_fr:"Français", l_fr_lvl:"Langue maternelle", l_en:"Anglais", l_de:"Allemand",
+  proj_eyebrow:"Projets GitHub", proj_title:"Mes <em>projets</em>",
+  proj_lead:"Une sélection de projets réalisés pendant mes études, de la modélisation économétrique à la conception d'une plateforme complète.",
+  proj_more:"Retrouvez tous mes dépôts sur <a href=\"https://github.com/Fannyltd\" target=\"_blank\" rel=\"noopener\">github.com/Fannyltd</a>",
+  see_repo:"Voir le dépôt", see_demo:"Voir la démo", from_github:"Dépôt GitHub", no_desc:"Dépôt GitHub — description à venir.",
+  edu_eyebrow:"Parcours scolaire", edu_title:"Ma <em>formation</em>",
+  in_progress:"En cours",
+  e1_t:"Master Économie de l'entreprise et des marchés",
+  e1_l1:"Parcours <strong>Big Data, Analyse &amp; Business Intelligence</strong>",
+  e1_l2:"Enseignements : économétrie, Data Science Systems, SQL, Python, mathématiques, intelligence artificielle, Machine Learning",
+  e2_t:"Année d'études à l'étranger", athens:"Athènes, Grèce",
+  e2_l1:"Enseignements en anglais en économie, gestion et Big Data.",
+  e3_t:"Licence d'Économie et Gestion", mention:"Mention bien",
+  e3_l1:"Fondamentaux en économie, gestion, statistiques et mathématiques appliquées.",
+  cert_eyebrow:"Mes certifications", cert_title:"Certifications &amp; <em>attestations</em>",
+  cert_lead:"Des formations complémentaires en data, management, éthique des affaires et langues.",
+  c1:"Programme de découverte du groupe LVMH et de ses métiers", c2_t:"Module Anti-Corruption", c3:"Fondamentaux du management", c5:"Certification d'anglais — 2024", c6:"Certification d'allemand — 2019", c7:"Dataiku",
+  exp_eyebrow:"Expériences professionnelles", exp_title:"Mes <em>expériences</em>",
+  search:"Recherche", x0_t:"Stage Data Scientist / Data Analyst", x0_d:"Dès début mars · 6 mois", x0_p:"Votre entreprise ?", x0_loc:"Paris & banlieue",
+  x0_l1:"Je souhaite mettre en pratique mes compétences en SQL, Python, Machine Learning et Business Intelligence au sein d'une équipe data.",
+  x1_t:"Agent de quai", x1_d:"Été 2025",
+  x1_l1:"Exploitation d'un système d'information : traçabilité et exactitude des flux de données (scannage, étiquetage).",
+  x1_l2:"Respect des protocoles qualité pour limiter les anomalies de données en amont de la chaîne logistique (colis entravés, réorganisation des flux de chargement).",
+  x1_l3:"Identification et résolution proactive de problématiques logistiques.",
+  x2_t:"Conseillère Licence", x2_d:"Janvier 2024",
+  x2_l1:"Conseil aux étudiants sur leurs choix d'études et d'orientation, partage d'expérience et présentation de la faculté et de ses cours, en équipe avec le responsable pédagogique.",
+  x3_t:"Apicultrice", x3_p:"Entrepreneuriat",
+  x3_l1:"Copropriétaire de 20 ruches depuis 2020, après une formation professionnalisante.",
+  x3_l2:"Soins et protection continus des abeilles, récolte, mise en pots et gestion des stocks.",
+  ct_eyebrow:"Me contacter", ct_title:"Travaillons <em>ensemble</em>",
+  ct_lead:"Une offre de stage, une question sur un projet ou simplement envie d'échanger ? Écrivez-moi !",
+  copy:"Copier", copied:"Copié ✓", phone:"Téléphone", location:"Localisation", location_v:"Paris (75002)",
+  f_title:"Envoyer un message", f_name:"Nom", f_email:"Email", f_subject:"Objet", f_msg:"Message", f_send:"Envoyer →",
+  f_err:"Merci de remplir votre nom, votre email et votre message.",
+  f_ok:"Votre logiciel de messagerie va s'ouvrir avec le message prêt. Sinon, écrivez directement à lattardfanny@gmail.com",
+  footer:"© 2026 Fanny Lattard — Portfolio réalisé avec HTML, CSS &amp; JavaScript"
+},
+en:{
+  banner:"🔎 Looking for a <strong>6-month Data Science / Data Analysis internship</strong> starting early March — Paris area",
+  nav_home:"Home", nav_about:"About", nav_projects:"Projects", nav_edu:"Education", nav_certs:"Certifications", nav_exp:"Experience", nav_contact:"Contact",
+  hello:"Hello, I'm",
+  tagline:"Master's student in <mark>Big Data, Analytics &amp; Business Intelligence</mark>",
+  intro:"Between economics, econometrics and programming, I love making data speak to support concrete decisions. I'm looking for a 6-month Data Scientist or Data Analyst internship starting early March, in Paris and the surrounding area.",
+  cta_discover:"Discover my journey", cta_contact:"Contact me", cta_cv:"Download my CV",
+  stat1:"Master's in progress at Sorbonne Paris Nord", stat2:"average grade during my Erasmus", stat3:"languages: French, English, German", stat4:"motivation for this internship",
+  about_eyebrow:"Discover my journey", about_title:"From economics <em>to data</em>",
+  about_p1:"After a <strong>Bachelor's in Economics and Management</strong> at Université Grenoble Alpes (with honours), I went on to a <strong>Master's in Business and Market Economics</strong> at Université Sorbonne Paris Nord, specialising in <strong>Big Data, Analytics &amp; Business Intelligence</strong>.",
+  about_p2:"My study year in <strong>Athens</strong>, taught entirely in English, let me deepen economics, management and Big Data in an international setting — with a 16.43/20 average.",
+  about_p3:"Today I combine <strong>econometrics, SQL, Python and Machine Learning</strong> to turn raw data into useful insights. The rigour and patience I've learned looking after my beehives since 2020 come with me on every project.",
+  hidden_title:"✨ See my hidden life",
+  h1_t:"Beekeeping", h1_d:"Co-owner of 20 beehives, from harvest to jarring.",
+  h2_t:"Reading", h2_d:"A passion that feeds my curiosity every day.",
+  h3_t:"Running", h3_d:"For endurance, consistency… and a clear mind.",
+  sk_data:"Languages & data", sk_bi:"Business Intelligence", sk_methods:"Methods", sk_tools:"Tools & collaboration", sk_langs:"Languages",
+  m1:"Econometrics", m3:"Statistics", maths:"Mathematics",
+  l_fr:"French", l_fr_lvl:"Native", l_en:"English", l_de:"German",
+  proj_eyebrow:"GitHub projects", proj_title:"My <em>projects</em>",
+  proj_lead:"A selection of projects completed during my studies, from econometric modelling to designing a complete platform.",
+  proj_more:"Find all my repositories on <a href=\"https://github.com/Fannyltd\" target=\"_blank\" rel=\"noopener\">github.com/Fannyltd</a>",
+  see_repo:"View repository", see_demo:"View demo", from_github:"GitHub repository", no_desc:"GitHub repository — description coming soon.",
+  edu_eyebrow:"Education", edu_title:"My <em>education</em>",
+  in_progress:"In progress",
+  e1_t:"Master's in Business and Market Economics",
+  e1_l1:"Specialisation: <strong>Big Data, Analytics &amp; Business Intelligence</strong>",
+  e1_l2:"Courses: econometrics, Data Science Systems, SQL, Python, mathematics, artificial intelligence, Machine Learning",
+  e2_t:"Study year abroad", athens:"Athens, Greece",
+  e2_l1:"Courses taught in English in economics, management and Big Data.",
+  e3_t:"Bachelor's in Economics and Management", mention:"With honours",
+  e3_l1:"Foundations in economics, management, statistics and applied mathematics.",
+  cert_eyebrow:"My certifications", cert_title:"Certifications &amp; <em>credentials</em>",
+  cert_lead:"Additional training in data, management, business ethics and languages.",
+  c1:"Discovery programme of the LVMH group and its professions", c2_t:"Anti-Corruption Module", c3:"Management fundamentals", c5:"English certification — 2024", c6:"German certification — 2019", c7:"Dataiku",
+  exp_eyebrow:"Professional experience", exp_title:"My <em>experience</em>",
+  search:"Wanted", x0_t:"Data Scientist / Data Analyst internship", x0_d:"From early March · 6 months", x0_p:"Your company?", x0_loc:"Paris area",
+  x0_l1:"I want to put my SQL, Python, Machine Learning and Business Intelligence skills into practice within a data team.",
+  x1_t:"Dock operator", x1_d:"Summer 2025",
+  x1_l1:"Operating an information system: ensuring traceability and accuracy of data flows (scanning, labelling).",
+  x1_l2:"Upholding quality protocols to minimise data anomalies upstream in the supply chain (blocked parcels, reorganising loading flows).",
+  x1_l3:"Proactively identifying and solving logistics issues.",
+  x2_t:"Bachelor's programme advisor", x2_d:"January 2024",
+  x2_l1:"Advising students on study and career choices, sharing experience and presenting the faculty and its courses, alongside the head of studies.",
+  x3_t:"Beekeeper", x3_p:"Entrepreneurship",
+  x3_l1:"Co-owner of 20 beehives since 2020, after vocational training.",
+  x3_l2:"Ongoing care and protection of the bees, harvesting, jarring and stock management.",
+  ct_eyebrow:"Contact me", ct_title:"Let's work <em>together</em>",
+  ct_lead:"An internship offer, a question about a project or just want to chat? Write to me!",
+  copy:"Copy", copied:"Copied ✓", phone:"Phone", location:"Location", location_v:"Paris (75002), France",
+  f_title:"Send a message", f_name:"Name", f_email:"Email", f_subject:"Subject", f_msg:"Message", f_send:"Send →",
+  f_err:"Please fill in your name, email and message.",
+  f_ok:"Your email app will open with the message ready. Otherwise, write directly to lattardfanny@gmail.com",
+  footer:"© 2026 Fanny Lattard — Portfolio built with HTML, CSS &amp; JavaScript"
+}};
+</script>
+
+<!-- ===================== LOGIQUE DU SITE ===================== -->
+<script>
+(function(){
+  let lang = "fr";
+  try { lang = localStorage.getItem("fl-lang") || "fr"; } catch(e){}
+  let ghRepos = [];
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const t = k => (I18N[lang] && I18N[lang][k]) ?? I18N.fr[k] ?? "";
+  const pick = v => (v && typeof v === "object" && !Array.isArray(v)) ? (v[lang] ?? v.fr ?? "") : (v ?? "");
+
+  /* ---------- Projets ---------- */
+  function projectCard(p, isGh){
+    const pts = pick(p.points) || [];
+    const links = [];
+    if (p.repo) links.push(`<a class="btn btn-primary" href="${esc(p.repo)}" target="_blank" rel="noopener">${t("see_repo")} ↗</a>`);
+    if (p.demo) links.push(`<a class="btn btn-ghost" href="${esc(p.demo)}" target="_blank" rel="noopener">${t("see_demo")}</a>`);
+    return `<article class="project reveal in">
+      <div class="project-visual v-${esc(p.color || "bordeaux")}"><span>${esc(p.icon || "📁")}</span></div>
+      <div class="project-body">
+        <p class="project-tag">${esc(isGh ? t("from_github") : pick(p.tag))}</p>
+        <h3>${esc(pick(p.title))}</h3>
+        <p>${esc(pick(p.desc) || t("no_desc"))}</p>
+        ${pts.length ? `<ul>${pts.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+        ${(p.stack||[]).length ? `<div class="chips">${p.stack.map(s=>`<span class="chip blue">${esc(s)}</span>`).join("")}</div>` : ""}
+        <div class="project-links">${links.join("")}</div>
+      </div></article>`;
+  }
+  function renderProjects(){
+    const grid = document.getElementById("projectsGrid");
+    const manual = PROJECTS.filter(p => p.visible !== false);
+    grid.innerHTML = manual.map(p => projectCard(p,false)).join("") + ghRepos.map(p => projectCard(p,true)).join("");
+  }
+  async function loadGithub(){
+    if (!GITHUB.autoLoad || !GITHUB.user) return;
+    try{
+      const r = await fetch(`https://api.github.com/users/${encodeURIComponent(GITHUB.user)}/repos?sort=updated&per_page=100`);
+      if (!r.ok) return;
+      const data = await r.json();
+      const known = PROJECTS.map(p => (p.repo||"").toLowerCase().replace(/\/$/,""));
+      const colors = ["sable","ciel","bordeaux"];
+      const low = a => (a||[]).map(x=>x.toLowerCase());
+      ghRepos = data
+        .filter(d => !d.fork)
+        .filter(d => !low(GITHUB.hide).includes(d.name.toLowerCase()))
+        .filter(d => !GITHUB.only.length || low(GITHUB.only).includes(d.name.toLowerCase()))
+        .filter(d => !known.includes(d.html_url.toLowerCase()))
+        .map((d,i) => ({
+          icon: "📊", color: colors[i % 3],
+          title: d.name.replace(/[-_]/g," "),
+          desc: d.description || "",
+          stack: [d.language, ...(d.topics||[]).slice(0,3)].filter(Boolean),
+          repo: d.html_url, demo: d.homepage || ""
+        }));
+      renderProjects();
+    }catch(e){ /* hors ligne ou API indisponible : on garde la liste manuelle */ }
+  }
+
+  /* ---------- Langue ---------- */
+  function applyLang(l){
+    lang = I18N[l] ? l : "fr";
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = t(el.dataset.i18n));
+    document.querySelectorAll("[data-i18n-html]").forEach(el => el.innerHTML = t(el.dataset.i18nHtml));
+    document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.lang === lang));
+    document.title = lang === "fr" ? "Fanny Lattard — Portfolio Data" : "Fanny Lattard — Data Portfolio";
+    try { localStorage.setItem("fl-lang", lang); } catch(e){}
+    renderProjects();
+  }
+  document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => applyLang(b.dataset.lang)));
+
+  /* ---------- Menu mobile ---------- */
+  const burger = document.getElementById("burger"), links = document.getElementById("navLinks");
+  burger.addEventListener("click", () => {
+    const open = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!open));
+    links.classList.toggle("open", !open);
+  });
+  links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    burger.setAttribute("aria-expanded","false"); links.classList.remove("open");
+  }));
+
+  /* ---------- Animations au scroll ---------- */
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting){
+      e.target.classList.add("in");
+      e.target.querySelectorAll(".bar i").forEach(b => b.style.width = b.dataset.w + "%");
+      io.unobserve(e.target);
+    }
+  }), {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  /* ---------- Lien actif dans le menu ---------- */
+  const navA = [...links.querySelectorAll("a")];
+  const spy = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) navA.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+  }), {rootMargin:"-45% 0px -50% 0px"});
+  document.querySelectorAll("main section[id]").forEach(s => spy.observe(s));
+
+  /* ---------- Copier l'email ---------- */
+  document.querySelectorAll(".copy").forEach(btn => btn.addEventListener("click", async ev => {
+    ev.preventDefault(); ev.stopPropagation();
+    try { await navigator.clipboard.writeText(btn.dataset.copy); btn.textContent = t("copied"); }
+    catch(e){ btn.textContent = btn.dataset.copy; }
+    setTimeout(() => btn.textContent = t("copy"), 2000);
+  }));
+
+  /* ---------- Formulaire (ouvre la messagerie) ---------- */
+  document.getElementById("contactForm").addEventListener("submit", ev => {
+    ev.preventDefault();
+    const f = ev.target, msg = document.getElementById("formMsg");
+    const name = f.name.value.trim(), email = f.email.value.trim(), body = f.message.value.trim();
+    if (!name || !email || !body){ msg.textContent = t("f_err"); return; }
+    const subject = f.subject.value.trim() || (lang === "fr" ? "Contact depuis ton portfolio" : "Contact from your portfolio");
+    const text = `${body}\n\n— ${name} (${email})`;
+    msg.textContent = t("f_ok");
+    window.location.href = `mailto:lattardfanny@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+  });
+
+  document.querySelectorAll("[data-link]").forEach(a => {
+    const url = (typeof LINKS !== "undefined" && LINKS[a.dataset.link]) || "";
+    if (url) a.href = url; else a.style.display = "none";
+    if (a.dataset.link === "cv") { a.target = "_blank"; a.rel = "noopener"; }
+  });
+
+  applyLang(lang);
+  loadGithub();
+})();
+</script>
+</body>
+</html>
